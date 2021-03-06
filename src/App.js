@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
+
 import Loading from "./Loading";
 import Tours from "./Tours";
+import Footer from "./Footer";
+
 const url = "https://course-api.com/react-tours-project";
 
 const App = () => {
   const [tours, setTours] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showFooter, setShowFooter] = useState(true);
 
   const fetchTours = async () => {
     setIsLoading(true);
@@ -23,6 +27,10 @@ const App = () => {
   const removeTour = (id) => {
     const newTours = tours.filter((tour) => tour.id !== id);
     setTours(newTours);
+  };
+
+  const closeFooter = () => {
+    setShowFooter(false);
   };
 
   useEffect(() => {
@@ -45,12 +53,14 @@ const App = () => {
         >
           Refresh
         </button>
+        {showFooter && <Footer closeFooter={closeFooter} />}
       </main>
     );
   }
   return (
     <main>
       <Tours tours={tours} removeTour={removeTour} />
+      {showFooter && <Footer closeFooter={closeFooter} />}
     </main>
   );
 };

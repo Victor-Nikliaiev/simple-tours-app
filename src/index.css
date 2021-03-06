@@ -72,3 +72,121 @@ h2 {
 .refresh-btn {
   margin-top: 1rem;
 }
+
+.footer {
+  color: #04360f;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.5s;
+
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 13rem;
+  margin: 0;
+  background-color: rgb(74, 247, 146);
+  background: linear-gradient(
+    90deg,
+    rgba(163, 245, 19, 1) 0%,
+    rgba(205, 255, 129, 1) 58%,
+    rgba(0, 255, 59, 1) 100%
+  );
+  /* background: linear-gradient(to right, #F27121, #E94057, #8A2387); */
+
+  text-align: center;
+  /* opacity: 0.9; */
+  border-bottom: 1rem solid transparent;
+  border-image: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+  border-image-slice: 1;
+}
+
+/* .close-footer {
+  font-weight: 900;
+  -webkit-border-radius: 20%;
+  -moz-border-radius: 20%;
+  border-radius: 20%;
+
+  margin: 0.3rem auto;
+  text-align: center;
+  width: 10rem;
+  height: 5 rem;
+} */
+
+.close-icon {
+  margin-top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* ======================== BUTTON TWO ======================== */
+.c-btn {
+  margin: 0, auto;
+  line-height: 3rem;
+  height: 3rem;
+  width: 3.3rem;
+  cursor: pointer;
+}
+
+.c-btn:hover {
+  color: rgb(255, 253, 234);
+}
+
+.btn-two {
+  color: rgb(5, 109, 29);
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-two span {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.btn-two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(0, 255, 59, 1);
+  background-color: rgba(0, 255, 59, 0.3);
+}
+.btn-two::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(0, 255, 59, 1);
+  background-color: rgba(0, 255, 59, 0.3);
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  color: white;
+  border: 1px solid rgb(245, 103, 103);
+  background-color: rgba(248, 8, 8, 1);
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  color: aliceblue;
+  border: 1px solid rgb(245, 103, 103);
+  background-color: rgba(248, 8, 8, 1);
+}
